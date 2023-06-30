@@ -135,6 +135,32 @@ const testimonialsSlider = new Swiper('.testimonials__items', {
 });
 /* slider testimonials end */
 
+/* slider page work detail */
+
+const workImages = document.querySelector('.work-images-slider');
+
+if (workImages) {
+  const workSlider = new Swiper('.work-images-nav', {
+    spaceBetween: 20,
+    slidesPerView: 10,
+    freeMode: true,
+    watchSlidesProgress: true,
+  });
+  const workSlidesNav = new Swiper(workImages, {
+    spaceBetween: 20,
+    slidesPerView: 1,
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    thumbs: {
+      swiper: workSlider,
+    },
+  });
+}
+
+/* slider page work detail end*/
+
 /*progressAnimation*/ 
 // const circle = document.querySelector('.progress');
 
@@ -255,12 +281,26 @@ const portfolioTabsBtns = document.querySelectorAll('.portfolio-tabs-nav__btn');
 const portfolioTabsItems = document.querySelectorAll('.portfolio-tabs__item');
 const portfolioTabsItemsVisible = document.querySelectorAll('.portfolio-tabs__item--visible');
 const loadMore = document.querySelector('.portfolio-more');
+const maxItems = 9;
 
-const isLoadMoreNeeded = (selector) => {
-  if (selector.length <=9 ) {
+if (portfolioTabsNav) {
+  const isLoadMoreNeeded = (selector) => {
+  if (selector.length <= maxItems ) {
     loadMore.style.display = 'none';    
   } else {
     loadMore.style.display = 'inline-flex';
+  }
+};
+
+const hideMoreItems = (selector) => {
+  if (selector.length > maxItems) {
+    const arr = Array.from(selector);
+    const hiddenItems = arr.slice(maxItems, selector.length);
+
+    hiddenItems.forEach(el => { 
+      el.classList.remove('portfolio-tabs__item--visible');
+      el.classList.remove('portfolio-tabs__item--visible-more');
+    });
   }
 };
 
@@ -284,19 +324,21 @@ const isLoadMoreNeeded = (selector) => {
       });
 
       isLoadMoreNeeded(document.querySelectorAll(`[data-target="${path}"]`));
+      hideMoreItems(document.querySelectorAll('.portfolio-tabs__item--visible'));
 
       if (path == 'all') {
+
         portfolioTabsItems.forEach(el => { 
           el.classList.add('portfolio-tabs__item--visible'); 
         });
 
         isLoadMoreNeeded(document.querySelectorAll('.portfolio-tabs__item--visible'));
+        hideMoreItems(document.querySelectorAll('.portfolio-tabs__item--visible'));
       }
     }
 })
 
-console.log(portfolioTabsItemsVisible.length);
-
+hideMoreItems(portfolioTabsItems);
 isLoadMoreNeeded(portfolioTabsItemsVisible);
 
 loadMore.addEventListener('click', (e) => {
@@ -317,7 +359,11 @@ loadMore.addEventListener('click', (e) => {
     loadMore.style.display = 'none';
   }
 });
+}
+
+
 
 // проверка количества элементов и скрытие 9 - через js
+
 
 /* portfolio-tabs end */

@@ -68,11 +68,7 @@
 .portfolio-tabs {
     &__item {
         display: none;
-        grid-column: 4 span; 
-
-      &:nth-child(n+10) {
-        display: none;
-      }  
+        grid-column: 4 span;  
 
        &--visible {
             display: block;

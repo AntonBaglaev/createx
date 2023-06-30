@@ -1821,10 +1821,17 @@ a {
 }
 
 .portfolio-tabs__item {
+  display: none;
   -ms-grid-column-span: 4;
   grid-column: 4 span;
 }
+.portfolio-tabs__item:nth-child(n+10) {
+  display: none;
+}
 .portfolio-tabs__item--visible {
+  display: block;
+}
+.portfolio-tabs__item--visible-more {
   display: block !important;
 }
 

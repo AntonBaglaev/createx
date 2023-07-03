@@ -13246,10 +13246,9 @@ const testimonialsSlider = new swiper__WEBPACK_IMPORTED_MODULE_4__["default"]('.
 /* slider testimonials end */
 
 /* slider page work detail */
-
 const workImages = document.querySelector('.work-images-slider');
 if (workImages) {
-  const workSlider = new swiper__WEBPACK_IMPORTED_MODULE_4__["default"]('.work-images-nav', {
+  const workSlider = new swiper__WEBPACK_IMPORTED_MODULE_4__["default"](".work-images-nav", {
     spaceBetween: 20,
     slidesPerView: 10,
     freeMode: true,
@@ -13259,15 +13258,14 @@ if (workImages) {
     spaceBetween: 20,
     slidesPerView: 1,
     navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev"
+      nextEl: ".work-images__next",
+      prevEl: ".work-images__prev"
     },
     thumbs: {
       swiper: workSlider
     }
   });
 }
-
 /* slider page work detail end*/
 
 /*progressAnimation*/

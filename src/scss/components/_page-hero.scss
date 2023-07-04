@@ -58,4 +58,8 @@
         background-position: right -8px top 48px;
         background-color: var(--color-light);
     }
+
+    &--about {
+        background-image: url("../img/about-hero-bg.png");
+    }
 }

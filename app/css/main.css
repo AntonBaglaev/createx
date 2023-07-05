@@ -1254,6 +1254,10 @@ a {
 .page-hero--about {
   background-image: url("../img/about-hero-bg.png");
 }
+.page-hero--positions {
+  background-image: url("../img/positions-hero-bg.png");
+  background-position: right -9px bottom;
+}
 
 .services {
   position: relative;
@@ -2274,7 +2278,8 @@ a {
 }
 
 .team {
-  padding: 54px 0;
+  padding-top: 54px;
+  padding-bottom: 120px;
 }
 .team__list {
   -webkit-column-gap: var(--grid-gap);
@@ -2325,6 +2330,15 @@ a {
 }
 .team__image {
   margin-bottom: 12px;
+}
+
+.worldwide {
+  padding-top: 80px;
+  padding-bottom: 117px;
+  background-color: var(--color-athens);
+}
+.worldwide__title {
+  margin-bottom: 60px;
 }
 
 .nav__list {

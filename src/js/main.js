@@ -13,7 +13,6 @@ const relatedSlider = document.querySelector('.related-projects__items');
 import Swiper, { Navigation, Pagination } from 'swiper';
 Swiper.use([Navigation, Pagination]);
 
-
 if (portSlider) {
   const portfolioSlider = new Swiper(portSlider, {
     slidesPerView: 3,
@@ -159,6 +158,49 @@ if (workImages) {
 }
 /* slider page work detail end*/
 
+/* slider page about */
+const historySlider = document.querySelector('.history-slider');
+
+if (historySlider) {
+  const workSlider = new Swiper(historySlider, {
+    spaceBetween: 20,
+    slidesPerView: 1,
+    navigation: {
+      nextEl: ".history__next",
+      prevEl: ".history__prev",
+    },
+  });
+
+  workSlider.on('slideChange', function () {
+    console.log('workSlider.realIndex')
+
+    historyBtns.forEach(el => {
+      el.classList.remove('history-nav__btn--active');
+    });
+
+    document.querySelector(`.history-nav__btn[data-index="${workSlider.realIndex}"]`).classList.add('history-nav__btn--active');
+  });
+
+  const historyBtns = document.querySelectorAll('.history-nav__btn');
+
+  historyBtns.forEach((el, idx) => {
+    el.setAttribute('data-index', idx);
+
+    el.addEventListener('click', (e) => {
+      const index = e.currentTarget.dataset.index;
+
+      historyBtns.forEach(el => {
+        el.classList.remove('history-nav__btn--active');
+      });
+
+      e.currentTarget.classList.add('history-nav__btn--active');
+
+      workSlider.slideTo(index);
+    });
+  });
+}
+/* slider page about end*/
+
 /*progressAnimation*/ 
 // const circle = document.querySelector('.progress');
 
@@ -172,7 +214,6 @@ if (workImages) {
 // };
 
 // progressAnimation();
-
 const circles = document.querySelectorAll('.facts-element__circle');
 circles.forEach(el => {
 

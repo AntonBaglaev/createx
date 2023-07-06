@@ -924,76 +924,6 @@ a {
   grid-row: 2 span;
 }
 
-.recent-article {
-  overflow: hidden;
-  border-radius: 4px;
-  height: 100%;
-  -webkit-box-shadow: 0 80px 80px -20px rgba(154, 156, 165, 0.08), 0 30px 24px -10px rgba(154, 156, 165, 0.05), 0 12px 10px -6px rgba(154, 156, 165, 0.04), 0 4px 4px -4px rgba(30, 33, 44, 0.03);
-  box-shadow: 0 80px 80px -20px rgba(154, 156, 165, 0.08), 0 30px 24px -10px rgba(154, 156, 165, 0.05), 0 12px 10px -6px rgba(154, 156, 165, 0.04), 0 4px 4px -4px rgba(30, 33, 44, 0.03);
-  background-color: var(--color-light);
-}
-.recent-article__text {
-  padding: 20px 24px;
-}
-.recent-article__title {
-  margin: 0;
-  margin-bottom: 13px;
-}
-.recent-article__descr {
-  margin: 0;
-  font-size: 16px;
-  line-height: 160%;
-  color: var(--color-gray);
-}
-.recent-article__meta {
-  margin-bottom: 17px;
-}
-.recent-article__link {
-  font-weight: 700;
-  font-size: 20px;
-  line-height: 150%;
-  color: var(--color-ebony);
-}
-.recent-article--small .recent-article__descr {
-  display: none;
-}
-.recent-article--small .recent-article__text {
-  padding: 12px 24px;
-}
-.recent-article--small .recent-article__title {
-  margin-bottom: 9px;
-}
-
-.article-meta {
-  font-size: 14px;
-  line-height: 150%;
-  color: var(--color-storm);
-}
-.article-meta__item {
-  position: relative;
-  color: inherit;
-}
-.article-meta__item:not(:last-child) {
-  margin-right: 21px;
-}
-.article-meta__item:not(:last-child)::after {
-  content: "";
-  position: absolute;
-  right: -13px;
-  top: 2px;
-  width: 1px;
-  height: 11px;
-  color: inherit;
-  background-color: currentColor;
-}
-.article-meta__item--comments {
-  padding-left: 24px;
-  background-image: url("../img/comments.svg");
-  background-position: left center;
-  background-size: 16px;
-  background-repeat: no-repeat;
-}
-
 .contacts-section {
   padding-top: 80px;
   padding-bottom: 77px;
@@ -1256,6 +1186,10 @@ a {
 }
 .page-hero--positions {
   background-image: url("../img/positions-hero-bg.png");
+  background-position: right -9px bottom;
+}
+.page-hero--news {
+  background-image: url("../img/news-hero-bg.png");
   background-position: right -9px bottom;
 }
 
@@ -2512,6 +2446,105 @@ a {
   color: var(--color-storm);
 }
 
+.categories {
+  padding-top: 120px;
+  padding-bottom: 180px;
+}
+.categories__title {
+  margin-bottom: 39px;
+}
+
+.categories-nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-bottom: 60px;
+}
+.categories-nav__item {
+  width: 16.6666666667%;
+}
+.categories-nav__btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  padding: 10px;
+  width: 100%;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 160%;
+  text-align: center;
+  color: #9a9ca5;
+  -webkit-transition: color 0.3s ease-in-out;
+  -o-transition: color 0.3s ease-in-out;
+  transition: color 0.3s ease-in-out;
+}
+.categories-nav__btn--active {
+  border-color: currentColor;
+  color: var(--color-primary);
+}
+
+.categories-list {
+  -webkit-column-gap: var(--grid-gap);
+  -moz-column-gap: var(--grid-gap);
+  column-gap: var(--grid-gap);
+  margin-bottom: 60px;
+  row-gap: 60px;
+}
+.categories-list__item {
+  -ms-grid-column-span: 6;
+  grid-column: 6 span;
+}
+.categories-list .news-article__descr {
+  overflow: hidden;
+  height: 52px;
+}
+
+.categories-pag {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+.categories-pag__item:not(:last-child) {
+  margin-right: 20px;
+}
+.categories-pag__link {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 160%;
+  color: var(--color-gray);
+  -webkit-transition: color 0.3s ease-in-out;
+  -o-transition: color 0.3s ease-in-out;
+  transition: color 0.3s ease-in-out;
+}
+.categories-pag__link svg {
+  display: block;
+  width: 24px;
+  height: 24px;
+  fill: currentColor;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+.categories-pag__link--active {
+  color: var(--color-primary);
+}
+
 .nav__list {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2838,5 +2871,75 @@ a {
   height: 100%;
   -o-object-fit: cover;
   object-fit: cover;
+}
+
+.news-article {
+  overflow: hidden;
+  border-radius: 4px;
+  height: 100%;
+  -webkit-box-shadow: 0 80px 80px -20px rgba(154, 156, 165, 0.08), 0 30px 24px -10px rgba(154, 156, 165, 0.05), 0 12px 10px -6px rgba(154, 156, 165, 0.04), 0 4px 4px -4px rgba(30, 33, 44, 0.03);
+  box-shadow: 0 80px 80px -20px rgba(154, 156, 165, 0.08), 0 30px 24px -10px rgba(154, 156, 165, 0.05), 0 12px 10px -6px rgba(154, 156, 165, 0.04), 0 4px 4px -4px rgba(30, 33, 44, 0.03);
+  background-color: var(--color-light);
+}
+.news-article__text {
+  padding: 20px 24px;
+}
+.news-article__title {
+  margin: 0;
+  margin-bottom: 13px;
+}
+.news-article__descr {
+  margin: 0;
+  font-size: 16px;
+  line-height: 160%;
+  color: var(--color-gray);
+}
+.news-article__meta {
+  margin-bottom: 17px;
+}
+.news-article__link {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 150%;
+  color: var(--color-ebony);
+}
+.news-article--small .recent-article__descr {
+  display: none;
+}
+.news-article--small .recent-article__text {
+  padding: 12px 24px;
+}
+.news-article--small .recent-article__title {
+  margin-bottom: 9px;
+}
+
+.article-meta {
+  font-size: 14px;
+  line-height: 150%;
+  color: var(--color-storm);
+}
+.article-meta__item {
+  position: relative;
+  color: inherit;
+}
+.article-meta__item:not(:last-child) {
+  margin-right: 21px;
+}
+.article-meta__item:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  right: -13px;
+  top: 2px;
+  width: 1px;
+  height: 11px;
+  color: inherit;
+  background-color: currentColor;
+}
+.article-meta__item--comments {
+  padding-left: 24px;
+  background-image: url("../img/comments.svg");
+  background-position: left center;
+  background-size: 16px;
+  background-repeat: no-repeat;
 }
 /*# sourceMappingURL=main.css.map */

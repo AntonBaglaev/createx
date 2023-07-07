@@ -7,6 +7,7 @@
 // компоненты страницы
 @import "./components/slider-nav";
 @import "./components/form-field";
+@import "./components/social";
 
 // подключения компонентов страницы (большие компоненты)
 @import "./components/header";
@@ -40,13 +41,13 @@
 @import "./components/positions-content";
 @import "./components/employee-benefits";
 @import "./components/categories";
+@import "./components/post";
 
 // подключения компонентов страницы (маленькие компоненты)
 @import "./components/nav";
 @import "./components/header-contats";
 @import "./components/video-block";
 @import "./components/learn-more";
-@import "./components/social";
 @import "./components/breadcrumbs";
 @import "./components/portfolio-item";
 @import "./components/work-images";

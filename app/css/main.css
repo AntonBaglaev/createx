@@ -1263,6 +1263,10 @@ a {
   letter-spacing: 1px;
   text-transform: initial;
 }
+.page-hero--contacts {
+  background-image: url("../img/contacts-hero-bg.png");
+  background-position: right -9px bottom;
+}
 
 .services {
   position: relative;
@@ -2736,6 +2740,54 @@ a {
   margin-bottom: 3px;
 }
 
+.comments {
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+.comments__title {
+  margin-bottom: 60px;
+}
+.comments__item:not(:last-child) {
+  margin-bottom: 59px;
+}
+
+.post-form {
+  padding-top: 37px;
+  padding-bottom: 180px;
+}
+.post-form__title {
+  margin-bottom: 50px;
+}
+.post-form__content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+.post-form .form-field__caption {
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+.post-form .form-field__input {
+  height: 52px;
+  font-size: 16px;
+}
+.post-form__field {
+  width: 48%;
+}
+.post-form__field--big {
+  margin-top: 22px;
+  margin-bottom: 46px;
+  width: 100%;
+}
+.post-form__field--big .form-field__input {
+  height: 100px;
+}
+
 .nav__list {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -3108,5 +3160,67 @@ a {
   background-position: left center;
   background-size: 16px;
   background-repeat: no-repeat;
+}
+
+.comment {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.comment__left {
+  padding-right: 30px;
+  width: calc(100% - 630px);
+}
+.comment__right {
+  width: 630px;
+}
+.comment__author {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 150%;
+  color: var(--color-ebony);
+}
+.comment__time {
+  font-size: 14px;
+  line-height: 150%;
+  color: var(--color-storm);
+}
+.comment__body {
+  margin-bottom: 19px;
+  font-size: 16px;
+  line-height: 160%;
+  color: var(--color-gray);
+}
+.comment__body a {
+  font-weight: 700;
+  color: var(--color-primary);
+}
+.comment__body * {
+  margin: 0;
+  margin-bottom: 20px;
+}
+.comment__body *:last-child {
+  margin: 0;
+}
+.comment__reply {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-size: 14px;
+  line-height: 150%;
+  color: var(--color-storm);
+}
+.comment__reply svg {
+  position: relative;
+  top: 2px;
+  display: block;
+  margin-right: 8px;
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+  -o-object-fit: cover;
+  object-fit: cover;
 }
 /*# sourceMappingURL=main.css.map */

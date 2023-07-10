@@ -2,7 +2,6 @@ import './_vendor';
 import vars from './_vars';
 import './_functions';
 import './_components';
-import './_components';
 
 const bodyStyles = window.getComputedStyle(document.body);
 const gap = parseInt(bodyStyles.getPropertyValue('--grid-gap')); 
@@ -400,9 +399,6 @@ loadMore.addEventListener('click', (e) => {
 });
 }
 
-
-
 // проверка количества элементов и скрытие 9 - через js
-
 
 /* portfolio-tabs end */

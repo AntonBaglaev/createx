@@ -14,9 +14,23 @@
         font-size: 16px;
         line-height: 160%;
         color: var(--color-gray);
+        transition: color 0.3s ease-in-out;
 
-        // &--current {
-        //     color: var(--color-primary);
-        // }
+        &:focus {
+            outline: 2px solid var(--color-primary);
+            outline-offset: 2px;
+        }
+
+        &:hover {
+            color: var(--color-primary);
+        }
+
+        &:active {
+            color: var(--color-active);
+        }
+
+        &--current {
+            color: var(--color-primary);
+        }
     }
 }

@@ -198,21 +198,28 @@ if (historySlider) {
     });
   });
 }
+
 /* slider page about end*/
 
+/*  slider in main hero */
+
+const heroSlider = new Swiper('.hero-slider', {
+  slidesPerView: 1,
+  navigation: {
+    nextEl: '.hero__next',
+    prevEl: '.hero__prev',
+  },
+  pagination: {
+    el: '.hero__pag',
+    type: 'bullets',
+    clickable: true,
+  },
+});
+
+/*  slider in main hero end */
+
 /*progressAnimation*/ 
-// const circle = document.querySelector('.progress');
 
-// const progressAnimation = () => {
-//     let percentageProgress = Math.floor(70);
-  
-//     let radius = circle.getAttribute('r');
-//     let circleLength = 2 * Math.PI * radius;
-//     circle.setAttribute('stroke-dasharray', circleLength);
-//     circle.setAttribute('stroke-dashoffset', circleLength - circleLength * percentageProgress / 100);
-// };
-
-// progressAnimation();
 const circles = document.querySelectorAll('.facts-element__circle');
 circles.forEach(el => {
 
@@ -240,77 +247,6 @@ circles.forEach(el => {
   }
 });
 /*progressAnimation end*/ 
-
-/*accordion*/
-class GraphAccordion {
-	constructor(selector, options) {
-		let defaultOptions = {
-			isOpen: () => {},
-			isClose: () => {},
-			speed: 300
-		};
-
-		this.options = Object.assign(defaultOptions, options);
-		this.accordion = document.querySelector(selector);
-		this.control = this.accordion.querySelector('.accordion__control');
-		this.content = this.accordion.querySelector('.accordion__content');
-		this.event();
-    this.start();
-	}
-
-  start() {
-    if (this.accordion) {
-      if (this.accordion.classList.contains('is-open')){
-        this.open();
-      }
-    }
-  }
-
-	event() {
-		console.log('event!');
-		
-		if (this.accordion) {
-			this.accordion.addEventListener('click', (e) => {
-				this.accordion.classList.toggle('open');
-
-				if (this.accordion.classList.contains('open')) {
-					this.open();
-				} else {
-					this.close();
-				}
-			});
-		}
-	}
-
-	open() {
-		this.accordion.style.setProperty('--accordion-time', `${this.options.speed / 1000}s`);
-		this.accordion.classList.add('is-open');
-		this.control.setAttribute('aria-expanded', true);
-		this.content.setAttribute('aria-hidden', false);
-		this.content.style.maxHeight = this.content.scrollHeight + 'px';
-		this.options.isOpen(this);
-	}
-
-	close() {
-		this.accordion.classList.remove('is-open');
-		this.control.setAttribute('aria-expanded', false);
-		this.content.setAttribute('aria-hidden', true);
-		this.content.style.maxHeight = null;
-		this.options.isClose(this);
-	}
-}
-
-if (document.querySelector('.we-offer')) {
-  const accordion1 = new GraphAccordion('.accordion-1', {
-    speed: 300,
-  });
-  
-  const accordion2 = new GraphAccordion('.accordion-2', {
-    speed: 300,
-  });
-}
-
-/*accordion end*/
 
 /* portfolio-tabs */
 

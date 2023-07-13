@@ -8,6 +8,7 @@
   --color-athens: #f4f5f7;
   --color-active: #fc3300;
   --grid-gap: 30px;
+  --hero-slider-speed: 500;
   --main-shadow:
     0 80px 80px -20px rgba(154, 156, 165, 0.08),
     0 30px 24px -10px rgba(154, 156, 165, 0.05),
@@ -573,8 +574,18 @@ a {
 }
 .hero__pag {
   counter-reset: pag;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 .hero__pag .swiper-pagination-bullet {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
   border-radius: 0;
   width: 178px;
   height: auto;
@@ -587,14 +598,44 @@ a {
   content: "0" counter(pag);
 }
 .hero__pag .swiper-pagination-bullet::after {
-  content: "";
+  display: none;
+}
+.hero__bar {
+  position: relative;
+  overflow: hidden;
+  border-radius: 100px;
   width: 100%;
   height: 2px;
-  border-radius: 100px;
   background-color: rgba(255, 255, 255, 0.3);
+}
+.hero__bar::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-light);
+  -webkit-transform: scaleX(0);
+  -ms-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transform-origin: left;
+  -ms-transform-origin: left;
+  transform-origin: left;
+  -webkit-transition: -webkit-transform var(--hero-slider-speed) ease-in-out;
+  transition: -webkit-transform var(--hero-slider-speed) ease-in-out;
+  -o-transition: transform var(--hero-slider-speed) ease-in-out;
+  transition: transform var(--hero-slider-speed) ease-in-out;
+  transition: transform var(--hero-slider-speed) ease-in-out, -webkit-transform var(--hero-slider-speed) ease-in-out;
 }
 .hero__btns .btn:not(:last-child) {
   margin-right: 20px;
+}
+
+.swiper-pagination-bullet-active .hero__bar::after {
+  -webkit-transform: scaleX(1);
+  -ms-transform: scaleX(1);
+  transform: scaleX(1);
 }
 
 .hero-slider {

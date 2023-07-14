@@ -23,6 +23,8 @@
 
     &__pag {
         counter-reset: pag;
+        left: calc((100% - 1260px) / 2) !important;
+        bottom: 120px !important;
         display: flex;
 
         .swiper-pagination-bullet {
@@ -38,6 +40,11 @@
             &::before {
                 counter-increment: pag;
                 content: "0" counter(pag);
+                font-weight: 700;
+                font-size: 28px;
+                line-height: 150%;
+                color: rgba(#fff, 0.3);
+                transition: color 0.3s ease-in-out;
             }
 
             &::after {
@@ -64,7 +71,6 @@
             background-color: var(--color-light);
             transform: scaleX(0);
             transform-origin: left;
-            transition: transform var(--hero-slider-speed) ease-in-out;
         }
     }
 
@@ -78,9 +84,14 @@
 }
 
 .swiper-pagination-bullet-active {
+    &::before {
+        color: var(--color-light) !important;
+    }
+
     .hero__bar {
         &::after {
             transform: scaleX(1);
+            transition: transform var(--hero-slider-speed) ease-in-out;
         }
     }
 }

@@ -574,6 +574,8 @@ a {
 }
 .hero__pag {
   counter-reset: pag;
+  left: calc((100% - 1260px) / 2) !important;
+  bottom: 120px !important;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -596,6 +598,13 @@ a {
 .hero__pag .swiper-pagination-bullet::before {
   counter-increment: pag;
   content: "0" counter(pag);
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 150%;
+  color: rgba(255, 255, 255, 0.3);
+  -webkit-transition: color 0.3s ease-in-out;
+  -o-transition: color 0.3s ease-in-out;
+  transition: color 0.3s ease-in-out;
 }
 .hero__pag .swiper-pagination-bullet::after {
   display: none;
@@ -622,20 +631,23 @@ a {
   -webkit-transform-origin: left;
   -ms-transform-origin: left;
   transform-origin: left;
-  -webkit-transition: -webkit-transform var(--hero-slider-speed) ease-in-out;
-  transition: -webkit-transform var(--hero-slider-speed) ease-in-out;
-  -o-transition: transform var(--hero-slider-speed) ease-in-out;
-  transition: transform var(--hero-slider-speed) ease-in-out;
-  transition: transform var(--hero-slider-speed) ease-in-out, -webkit-transform var(--hero-slider-speed) ease-in-out;
 }
 .hero__btns .btn:not(:last-child) {
   margin-right: 20px;
 }
 
+.swiper-pagination-bullet-active::before {
+  color: var(--color-light) !important;
+}
 .swiper-pagination-bullet-active .hero__bar::after {
   -webkit-transform: scaleX(1);
   -ms-transform: scaleX(1);
   transform: scaleX(1);
+  -webkit-transition: -webkit-transform var(--hero-slider-speed) ease-in-out;
+  transition: -webkit-transform var(--hero-slider-speed) ease-in-out;
+  -o-transition: transform var(--hero-slider-speed) ease-in-out;
+  transition: transform var(--hero-slider-speed) ease-in-out;
+  transition: transform var(--hero-slider-speed) ease-in-out, -webkit-transform var(--hero-slider-speed) ease-in-out;
 }
 
 .hero-slider {
@@ -2537,12 +2549,44 @@ a {
   -webkit-column-gap: var(--grid-gap);
   -moz-column-gap: var(--grid-gap);
   column-gap: var(--grid-gap);
-  margin-bottom: 20px;
-  row-gap: 0;
+  margin-bottom: 80px;
+  row-gap: 64px;
+}
+.team__top {
+  position: relative;
+  margin-bottom: 12px;
+  font-size: 0;
+}
+.team__socials {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  border-radius: 0 0 4px 4px;
+  padding: 20px 10px;
+  width: 100%;
+  background-color: rgba(255, 90, 48, 0.7);
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: opacity 0.3s ease-in-out, visibility 0.3 ease-in-out;
+  -o-transition: opacity 0.3s ease-in-out, visibility 0.3 ease-in-out;
+  transition: opacity 0.3s ease-in-out, visibility 0.3 ease-in-out;
 }
 .team__item {
   -ms-grid-column-span: 3;
   grid-column: 3 span;
+}
+.team__item:hover .team__socials {
+  opacity: 1;
+  visibility: visible;
 }
 .team__text {
   font-size: 18px;
@@ -2580,6 +2624,9 @@ a {
   -o-object-fit: cover;
   object-fit: cover;
 }
+.team__link:not(:last-child) {
+  margin-right: 12px;
+}
 .team__name {
   margin-bottom: 5px;
   font-weight: 700;
@@ -2593,9 +2640,6 @@ a {
   line-height: 160%;
   text-align: center;
   color: var(--color-storm);
-}
-.team__image {
-  margin-bottom: 12px;
 }
 
 .worldwide {
@@ -3469,6 +3513,13 @@ a {
   bottom: 0;
   z-index: 3;
   background-color: rgba(30, 33, 44, 0.6);
+  -webkit-transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+  -o-transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+}
+.video-block--played::before {
+  opacity: 0;
+  visibility: hidden;
 }
 .video-block__content {
   display: block;
@@ -3498,9 +3549,9 @@ a {
   -webkit-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
-  -webkit-transition: background-color 0.3s ease-in-out;
-  -o-transition: background-color 0.3s ease-in-out;
-  transition: background-color 0.3s ease-in-out;
+  -webkit-transition: background-color 0.3s ease-in-out, opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+  -o-transition: background-color 0.3s ease-in-out, opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out, opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
 }
 .video-block__play svg {
   width: 26px;
@@ -3517,42 +3568,9 @@ a {
 .video-block__play:active {
   background-color: var(--color-active);
 }
-.video-block__muted {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: absolute;
-  left: 32px;
-  bottom: 32px;
-  z-index: 10;
-  border-radius: 100%;
-  width: 40px;
-  height: 40px;
-  background-color: rgba(255, 255, 255, 0.12);
-  -webkit-transition: background-color 0.3s ease-in-out;
-  -o-transition: background-color 0.3s ease-in-out;
-  transition: background-color 0.3s ease-in-out;
-}
-.video-block__muted svg {
-  width: 20px;
-  height: 20px;
-  fill: var(--color-light);
-}
-.video-block__muted:focus {
-  outline: 2px solid var(--color-primary);
-  outline-offset: 2px;
-}
-.video-block__muted:hover {
-  background-color: rgba(255, 255, 255, 0.4);
-}
-.video-block__muted:active {
-  background-color: rgba(255, 255, 255, 0.4);
+.video-block__play--played {
+  opacity: 0;
+  visibility: hidden;
 }
 
 .learn-more {
@@ -3667,8 +3685,8 @@ a {
   color: var(--color-storm);
 }
 .portfolio-item__btn {
-  display: none;
   margin-top: 24px;
+  margin-bottom: -68px;
   border: 1px solid currentColor;
   border-radius: 4px;
   padding: 13px 31px;
@@ -3677,15 +3695,17 @@ a {
   letter-spacing: 0.5px;
   text-transform: uppercase;
   color: var(--color-primary);
+  -webkit-transition: 0.3s ease-in-out;
+  -o-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+  will-change: margin;
 }
 .portfolio-item:focus {
   outline: 2px solid var(--color-primary);
   outline-offset: 2px;
 }
-.portfolio-item:hover {
-  -webkit-transform: translateY(-3px);
-  -ms-transform: translateY(-3px);
-  transform: translateY(-3px);
+.portfolio-item:hover .portfolio-item__btn {
+  margin-bottom: 0;
 }
 
 .work-images {

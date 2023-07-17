@@ -138,7 +138,8 @@
                         Send your CV or subscribe to our newsletter to receive information about new vacancies.
                     </p>
                     <div class="positions-looking__btns">
-                        <button class="btn-reset btn btn--stroke-primary positions-looking__btn--subs">Subscribe</button>
+                        <button class="btn-reset btn btn--stroke-primary positions-looking__btn--subs"
+                        data-graph-animation="custom" data-graph-path="first">Subscribe</button>
                         <button class="btn-reset btn btn--fill positions-looking__btn--send">Send CV</button>
                     </div>
                 </div>
@@ -207,6 +208,14 @@
 </section>
     </main>
     <footer class="footer">
+  <a href="#page" data-scroll class="to-top">
+    <span class="to-top__text">Go to top</span>
+    <span class="to-top__icon">
+      <svg style="fill: #fff">
+        <use xlink:href="img/sprite.svg#to-top"></use>
+      </svg>
+    </span>
+  </a>
   <div class="container footer__container grid">
     <div class="footer__left">
       <div class="footer__top">
@@ -308,6 +317,15 @@
     </small>
   </div>
 </footer>
+
+    <div class="modal">
+    <div class="modal__container site-modal" role="dialog" aria-modal="true" data-graph-target="first">
+        <button class="btn-reset modal__close" aria-label="Закрыть модальное окно"></button>
+        <div class="modal-content">
+            <h2 class="site-modal__title">34</h2>
+        </div>
+    </div>
+</div>
 
   </div>
   <script src="js/vendor.js"></script>

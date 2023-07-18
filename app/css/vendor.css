@@ -1551,7 +1551,7 @@ html {
   width: 100%;
 }
 
-.modal {
+.graph-modal {
   --transition-time: 0.3s;
   position: fixed;
   left: 0;
@@ -1571,14 +1571,14 @@ html {
   transition: opacity var(--transition-time), visibility var(--transition-time);
 }
 
-.modal::before {
+.graph-modal::before {
   content: "";
   display: inline-block;
   vertical-align: middle;
   height: 100%;
 }
 
-.modal__container {
+.graph-modal__container {
   position: relative;
   width: 1000px;
   margin: 50px auto;
@@ -1593,11 +1593,11 @@ html {
 }
 
 @media (max-width: 1024px) {
-  .modal__container {
+  .graph-modal__container {
     width: 90%;
   }
 }
-.modal__close {
+.graph-modal__close {
   position: absolute;
   right: 10px;
   top: 10px;
@@ -1610,7 +1610,7 @@ html {
   cursor: pointer;
 }
 
-.modal.is-open {
+.graph-modal.is-open {
   opacity: 1;
   visibility: visible;
   -webkit-transition: opacity var(--transition-time), visibility var(--transition-time);
@@ -1618,7 +1618,7 @@ html {
   transition: opacity var(--transition-time), visibility var(--transition-time);
 }
 
-.modal__container.modal-open {
+.graph-modal__container.graph-modal-open {
   display: inline-block;
 }
 

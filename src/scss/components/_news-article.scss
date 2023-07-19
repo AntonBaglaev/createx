@@ -47,15 +47,15 @@
     }
 
     &--small {
-        .recent-article__descr {
+        .news-article__descr {
             display: none;
         }
 
-        .recent-article__text {
+        .news-article__text {
             padding: 12px 24px;
         }
 
-        .recent-article__title {
+        .news-article__title {
             margin-bottom: 9px;
         }
     }

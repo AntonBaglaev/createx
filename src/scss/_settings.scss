@@ -378,6 +378,11 @@ a {
     opacity: 1;
     visibility: visible;
   }
+
+  @include middledesk{
+    right: 20px;
+    bottom: 20px;
+  }
 }
 
 .site-modal {

@@ -16,7 +16,7 @@
     0 4px 4px -4px rgba(30, 33, 44, 0.03);
 }
 
-/* stylelint-disable */ /* stylelint-disable */ /* stylelint-disable */
+/* stylelint-disable */ /* stylelint-disable */
 .custom-checkbox__field:checked + .custom-checkbox__content::after {
   opacity: 1;
 }
@@ -430,6 +430,12 @@ a {
   opacity: 1;
   visibility: visible;
 }
+@media (max-width: 1440px) {
+  .to-top {
+    right: 20px;
+    bottom: 20px;
+  }
+}
 
 .site-modal {
   border-radius: 4px;
@@ -708,6 +714,11 @@ a {
 .header__nav {
   margin-left: -112px;
 }
+@media (max-width: 1200px) {
+  .header__nav {
+    margin-left: 0;
+  }
+}
 .header--main {
   background-color: var(--color-light);
 }
@@ -718,6 +729,11 @@ a {
   width: 100%;
 }
 
+@media (max-width: 1200px) {
+  .logo {
+    max-width: 100px;
+  }
+}
 .logo:focus {
   outline: 2px solid var(--color-primary);
   outline-offset: 2px;
@@ -736,6 +752,11 @@ a {
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
 }
+@media (max-width: 1440px) {
+  .hero__next {
+    display: none;
+  }
+}
 .hero__prev {
   position: absolute;
   left: 32px;
@@ -745,6 +766,11 @@ a {
   -webkit-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
+}
+@media (max-width: 1440px) {
+  .hero__prev {
+    display: none;
+  }
 }
 .hero__pag {
   counter-reset: pag;
@@ -1036,6 +1062,11 @@ a {
   -o-transition: color 0.3s ease-in-out;
   transition: color 0.3s ease-in-out;
 }
+@media (max-width: 1200px) {
+  .services-item__title {
+    font-size: 18px;
+  }
+}
 .services-item__construct::before {
   background-image: url("../img/services-1.jpg");
 }
@@ -1137,6 +1168,11 @@ a {
   position: relative;
   z-index: 5;
   margin-bottom: -60px;
+}
+@media (max-width: 1200px) {
+  .testimonials__image {
+    width: 380px;
+  }
 }
 .testimonials__title {
   margin-bottom: 60px;
@@ -3655,6 +3691,11 @@ a {
   -o-transition: color 0.3s ease-in-out;
   transition: color 0.3s ease-in-out;
 }
+@media (max-width: 1200px) {
+  .contacts-link__value {
+    font-size: 16px;
+  }
+}
 .contacts-link:focus {
   outline: 2px solid var(--color-primary);
   outline-offset: 2px;
@@ -3984,13 +4025,13 @@ a {
 .news-article__link:active {
   color: var(--color-active);
 }
-.news-article--small .recent-article__descr {
+.news-article--small .news-article__descr {
   display: none;
 }
-.news-article--small .recent-article__text {
+.news-article--small .news-article__text {
   padding: 12px 24px;
 }
-.news-article--small .recent-article__title {
+.news-article--small .news-article__title {
   margin-bottom: 9px;
 }
 

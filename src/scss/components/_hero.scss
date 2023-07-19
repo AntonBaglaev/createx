@@ -10,6 +10,10 @@
         z-index: 30;
         background-color: var(--color-light);
         transform: translateY(-50%);
+
+        @include middledesk {
+            display: none;
+        }
     }
 
     &__prev {
@@ -19,6 +23,10 @@
         z-index: 30;
         background-color: var(--color-light);
         transform: translateY(-50%);
+
+        @include middledesk {
+            display: none;
+        }
     }
 
     &__pag {

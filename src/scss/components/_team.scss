@@ -12,6 +12,10 @@
         position: relative;
         margin-bottom: 12px;
         font-size: 0;
+
+        @include tablet {
+            text-align: center;
+        }
     }
 
     &__socials {
@@ -38,6 +42,10 @@
                 opacity: 1;
                 visibility: visible;
             }
+        }
+
+        @include tablet {
+            grid-column: 6 span;
         }
     }
 

@@ -16459,7 +16459,7 @@ const relatedSlider = document.querySelector('.related-projects__items');
 swiper__WEBPACK_IMPORTED_MODULE_4__["default"].use([swiper__WEBPACK_IMPORTED_MODULE_4__.Navigation, swiper__WEBPACK_IMPORTED_MODULE_4__.Pagination]);
 if (portSlider) {
   const portfolioSlider = new swiper__WEBPACK_IMPORTED_MODULE_4__["default"](portSlider, {
-    slidesPerView: 3,
+    slidesPerView: 1,
     spaceBetween: gap,
     //loop: true,
     on: {
@@ -16475,6 +16475,14 @@ if (portSlider) {
     navigation: {
       nextEl: '.portfolio-section__next',
       prevEl: '.portfolio-section__prev'
+    },
+    breakpoints: {
+      576: {
+        slidesPerView: 2
+      },
+      768: {
+        slidesPerView: 3
+      }
     }
   });
   document.querySelector('.portfolio-section__prev').addEventListener('click', () => {

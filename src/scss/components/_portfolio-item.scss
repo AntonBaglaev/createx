@@ -44,6 +44,10 @@
         color: var(--color-primary);
         transition: 0.3s ease-in-out;
         will-change: margin;
+
+        @include minitablet {
+            margin-bottom: 0;
+        }
     }
 
     &:focus {

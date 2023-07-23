@@ -27,10 +27,18 @@
                 grid-column: 12 span;
                 grid-row: auto;
             }
+
+            @include mobile {
+                grid-column: 4 span;
+            }
         }
 
         @include tablet {
             grid-column: 12 span;
+        }
+
+        @include mobile {
+            grid-column: 4 span;
         }
     }
 }

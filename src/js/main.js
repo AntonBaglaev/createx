@@ -14,7 +14,7 @@ Swiper.use([Navigation, Pagination]);
 
 if (portSlider) {
   const portfolioSlider = new Swiper(portSlider, {
-    slidesPerView: 3,
+    slidesPerView: 1,
     spaceBetween: gap,
     //loop: true,
     on: {
@@ -34,6 +34,14 @@ if (portSlider) {
       nextEl: '.portfolio-section__next',
       prevEl: '.portfolio-section__prev',
     },
+    breakpoints: {
+      576: {
+        slidesPerView: 2,
+      },
+      768: {
+        slidesPerView: 3,
+      }
+    }
   });
 
 document.querySelector('.portfolio-section__prev').addEventListener('click', () => {

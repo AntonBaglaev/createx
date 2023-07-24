@@ -16511,7 +16511,7 @@ if (portSlider) {
 }
 if (relatedSlider) {
   const relatedProjSlider = new swiper__WEBPACK_IMPORTED_MODULE_4__["default"](relatedSlider, {
-    slidesPerView: 3,
+    slidesPerView: 1,
     spaceBetween: gap,
     //loop: true,
     on: {
@@ -16527,6 +16527,14 @@ if (relatedSlider) {
     navigation: {
       nextEl: '.related-projects__next',
       prevEl: '.related-projects__prev'
+    },
+    breakpoints: {
+      576: {
+        slidesPerView: 2
+      },
+      768: {
+        slidesPerView: 3
+      }
     }
   });
   document.querySelector('.related-projects__prev').addEventListener('click', () => {

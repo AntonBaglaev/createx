@@ -38,6 +38,12 @@
             opacity: 1;
             visibility: visible;
         }
+
+        .portfolio-item__title {
+            @include minitablet {
+                min-height: 52px;
+            }
+        }
     }
 }
 

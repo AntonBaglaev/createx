@@ -101,6 +101,10 @@
                 outline: 2px solid var(--color-primary);
                 outline-offset: 2px;
             }
+
+            @include tablet {
+                padding: 0 10px;
+            }
         }
 
         &:first-child {

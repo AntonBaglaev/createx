@@ -80,6 +80,10 @@
         line-height: 160%;
         color: var(--color-storm);
     }
+
+    @include mobile {
+        padding-bottom: 40px;
+    }
 }
 
 .know-form {

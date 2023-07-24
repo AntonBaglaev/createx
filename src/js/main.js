@@ -76,7 +76,7 @@ document.querySelector('.portfolio-section__next').addEventListener('click', () 
 
 if (relatedSlider) {
   const relatedProjSlider = new Swiper(relatedSlider, {
-    slidesPerView: 3,
+    slidesPerView: 1,
     spaceBetween: gap,
     //loop: true,
     on: {
@@ -96,6 +96,14 @@ if (relatedSlider) {
       nextEl: '.related-projects__next',
       prevEl: '.related-projects__prev',
     },
+    breakpoints: {
+      576: {
+        slidesPerView: 2,
+      },
+      768: {
+        slidesPerView: 3,
+      }
+    }
   });
 
 document.querySelector('.related-projects__prev').addEventListener('click', () => {

@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="css/main.css">
 </head>
 
-<body>
+<body id="page">
   <div class="site-container">
     <header class="header header--secondary">
     <div class="container header__container">
@@ -27,6 +27,16 @@
             <li class="nav__item"><a href="news.html" class="nav__link">News</a></li>
             <li class="nav__item"><a href="contacts.html" class="nav__link">Contacts</a></li>
           </ul>
+          <div class="header-contacts header-contacts--nav">
+            <a href="tel:405550128" class="header-contacts__link contacts-link contacts-link--call">
+              <span class="contacts-link__caption">Call us</span>
+              <span class="contacts-link__value">(405) 555-0128</span>
+            </a>
+            <a href="mailto:hello@createx.com" class="header-contacts__link contacts-link contacts-link--mail">
+              <span class="contacts-link__caption">Talk to us</span>
+              <span class="contacts-link__value">hello@createx.com</span>
+            </a>
+          </div>
       </nav>
       <div class="header-contacts">
         <a href="tel:405550128" class="header-contacts__link contacts-link contacts-link--call">
@@ -383,6 +393,7 @@
     </small>
   </div>
 </footer>
+<div class="overlay"></div>
 
   </div>
   <script src="js/vendor.js"></script>

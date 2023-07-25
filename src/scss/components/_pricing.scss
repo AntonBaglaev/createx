@@ -25,6 +25,10 @@
     width: 100%;
     box-shadow: var(--main-shadow);
     background-color: var(--color-light);
+
+    @include minitablet {
+        overflow-x: auto;
+    }
 }
 
 .table {
@@ -130,5 +134,9 @@
         line-height: 160%;
         text-align: center;
         color: var(--color-gray);
+    }
+
+    @include minitablet {
+        width: 1200px;
     }
 }

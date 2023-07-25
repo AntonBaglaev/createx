@@ -18,6 +18,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_to_top_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/to-top.js */ "./src/js/components/to-top.js");
 /* harmony import */ var _components_modals_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/modals.js */ "./src/js/components/modals.js");
 /* harmony import */ var _components_modals_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_components_modals_js__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _components_burger_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/burger.js */ "./src/js/components/burger.js");
+/* harmony import */ var _components_burger_js__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_components_burger_js__WEBPACK_IMPORTED_MODULE_5__);
+
 
 
 
@@ -228,6 +231,44 @@ if (document.querySelector('.we-offer')) {
     speed: 300
   });
 }
+
+/***/ }),
+
+/***/ "./src/js/components/burger.js":
+/*!*************************************!*\
+  !*** ./src/js/components/burger.js ***!
+  \*************************************/
+/***/ (() => {
+
+const burger = document.querySelector('.burger');
+const menu = document.querySelector('.header__nav');
+const overlay = document.querySelector('.overlay');
+const disScroll = () => {
+  let pagePosition = window.scrollY;
+  document.body.classList.add('dis-scroll');
+  document.body.dataset.position = pagePosition;
+  document.body.style.top = -pagePosition + 'px';
+};
+const enScroll = () => {
+  let pagePosition = parseInt(document.body.dataset.position, 10);
+  document.body.style.top = 'auto';
+  document.body.classList.remove('dis-scroll');
+  window.scrollTo({
+    top: pagePosition,
+    left: 0
+  });
+  document.body.removeAttribute('data-position');
+};
+burger.addEventListener('click', e => {
+  burger.classList.toggle('burger--active');
+  menu.classList.toggle('header__nav--active');
+  overlay.classList.toggle('overlay--active');
+  if (burger.classList.contains('burger--active')) {
+    disScroll();
+  } else {
+    enScroll();
+  }
+});
 
 /***/ }),
 
@@ -16579,9 +16620,17 @@ const workImages = document.querySelector('.work-images-slider');
 if (workImages) {
   const workSlider = new swiper__WEBPACK_IMPORTED_MODULE_4__["default"](".work-images-nav", {
     spaceBetween: 20,
-    slidesPerView: 10,
+    slidesPerView: 3,
     freeMode: true,
-    watchSlidesProgress: true
+    watchSlidesProgress: true,
+    breakpoints: {
+      576: {
+        slidesPerView: 6
+      },
+      768: {
+        slidesPerView: 10
+      }
+    }
   });
   const workSlidesNav = new swiper__WEBPACK_IMPORTED_MODULE_4__["default"](workImages, {
     spaceBetween: 20,

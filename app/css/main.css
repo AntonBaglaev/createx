@@ -162,6 +162,16 @@ a {
   }
 }
 
+.dis-scroll {
+  position: relative;
+  overflow: hidden;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+}
+
 .main-descr {
   margin: 0;
   font-size: 20px;
@@ -697,6 +707,20 @@ a {
 .overlay--active {
   opacity: 1;
   visibility: visible;
+}
+
+@media (max-width: 576px) {
+  .modal::before {
+    display: none;
+  }
+}
+
+@media (max-width: 576px) {
+  .site-modal {
+    padding: 20px;
+    padding-top: 40px;
+    width: 90%;
+  }
 }
 
 .slider-nav {

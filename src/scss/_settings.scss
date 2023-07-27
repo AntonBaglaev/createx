@@ -98,6 +98,16 @@ a {
   }
 }
 
+.dis-scroll {
+  position: relative;
+  overflow: hidden;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+}
+
 .main-descr {
   margin: 0;
   font-size: 20px;
@@ -608,5 +618,21 @@ a {
   &--active {
     opacity: 1;
     visibility: visible;
+  }
+}
+
+.modal {
+  @include mobile {
+    &::before {
+      display: none;
+    }
+  }
+}
+
+.site-modal {
+  @include mobile {
+    padding: 20px;
+    padding-top: 40px;
+    width: 90%;
   }
 }
